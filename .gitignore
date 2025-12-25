@@ -1,0 +1,23 @@
+# Authentication credentials (NEVER COMMIT THESE!)
+auth/credentials.json
+auth/token.json
+
+# User-specific configuration
+config.json
+CLAUDE.md
+tests/google_sheets_exploration.ipynb
+
+# Environment variables
+.env
+
+# Python
+*.pyc
+__pycache__/
+.venv
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

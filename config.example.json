@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "Tiller Money": {
+      "command": "/path/to/your/conda/env/bin/python",
+      "args": [
+        "/path/to/your/tiller_mcp/src/tiller_mcp_server/server.py"
+      ],
+      "env": {
+        "TILLER_SHEET_ID": "YOUR_TILLER_SPREADSHEET_ID_HERE"
+      }
+    }
+  }
+}
