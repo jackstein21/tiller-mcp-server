@@ -56,8 +56,13 @@ def authenticate_google_sheets():
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             print("Token expired, refreshing...")
-            creds.refresh(Request())
-        else:
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                print(f"Token refresh failed ({e}), deleting token and re-authenticating...")
+                os.remove(TOKEN_PATH)
+                creds = None
+        if not creds:
             if not os.path.exists(CREDENTIALS_PATH):
                 print(f"ERROR: credentials.json not found at {CREDENTIALS_PATH}")
                 print("\nPlease follow these steps:")
